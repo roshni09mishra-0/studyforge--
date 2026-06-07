@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StudyForge AI — Learn Faster from Notes & PDFs</title>
+    <meta name="description" content="StudyForge AI is an AI-powered study assistant that summarizes notes, generates quizzes and flashcards, and builds personalized study plans." />
+    <link rel="icon" href="/assets/img/logo.svg" />
+    <link rel="stylesheet" href="/assets/css/landing.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="left">
+          <img src="/assets/img/logo.svg" alt="StudyForge AI" />
+          <a class="chip" href="#features">AI Study SaaS</a>
+        </div>
+        <nav class="links">
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#security">Security</a>
+        </nav>
+        <div class="right">
+          <a class="btn" href="/login.html">Log in</a>
+          <a class="btn primary" href="/login.html">Get Started</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1 class="headline">Turn study materials into mastery—faster.</h1>
+            <p class="sub">
+              Upload PDFs, DOCX, or TXT. Get smart summaries, quizzes, flashcards, and a personalized AI study plan—saved to your account across devices.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="/login.html">Start studying</a>
+              <a class="btn" href="#features">See features</a>
+            </div>
+            <div class="kpis">
+              <div class="kpi">
+                <div class="v">1-click</div>
+                <div class="l">summaries + key points</div>
+              </div>
+              <div class="kpi">
+                <div class="v">Instant</div>
+                <div class="l">quizzes + scoring</div>
+              </div>
+              <div class="kpi">
+                <div class="v">Personal</div>
+                <div class="l">AI study planner</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="preview" aria-label="Product preview">
+            <div class="inner">
+              <span class="chip">Premium dashboard • light/dark theme</span>
+              <h3>Daily Focus</h3>
+              <p>StudyForge AI blends summarization, retrieval practice, and planning to keep your learning streak alive.</p>
+              <div class="grid" style="margin-top:12px">
+                <div class="card" style="grid-column: span 12">
+                  <h3>Quick actions</h3>
+                  <p>Summarize → Quiz → Flashcards → Plan</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="container">
+          <h2>Core features</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>AI Notes Summarizer</h3>
+              <p>Concise or detailed summaries + key points from PDFs, DOCX, and TXT.</p>
+            </div>
+            <div class="card">
+              <h3>AI Quiz Generator</h3>
+              <p>MCQs + True/False with difficulty levels and instant scoring.</p>
+            </div>
+            <div class="card">
+              <h3>Flashcards</h3>
+              <p>Flip animations, save to your account, and revisit anytime.</p>
+            </div>
+            <div class="card">
+              <h3>Study Planner</h3>
+              <p>Enter your exam date and availability—get a personalized timetable.</p>
+            </div>
+            <div class="card">
+              <h3>Resource Library</h3>
+              <p>Keep your notes, summaries, flashcards, and quiz history searchable.</p>
+            </div>
+            <div class="card">
+              <h3>Analytics</h3>
+              <p>Track hours studied, streaks, scores, and subject-wise progress.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section">
+        <div class="container">
+          <h2>How it works</h2>
+          <div class="grid">
+            <div class="card">
+              <h3>1) Upload</h3>
+              <p>Select a PDF, DOCX, or TXT. StudyForge extracts text automatically.</p>
+            </div>
+            <div class="card">
+              <h3>2) Generate</h3>
+              <p>AI produces summaries, quizzes, flashcards, and a study plan.</p>
+            </div>
+            <div class="card">
+              <h3>3) Track</h3>
+              <p>Your results sync to Firebase so you can continue on any device.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="security" class="section">
+        <div class="container">
+          <h2>Security & privacy</h2>
+          <div class="grid">
+            <div class="card" style="grid-column: span 12">
+              <h3>Firebase Auth + Firestore rules</h3>
+              <p>
+                Your account is protected by Firebase Authentication. Data is stored per-user in Firestore and restricted with security rules.
+                You control what you upload and what you keep in your library.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="container">
+        <div>© <span id="year"></span> StudyForge AI. Built with Firebase.</div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
+

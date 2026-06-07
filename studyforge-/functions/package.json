@@ -1,0 +1,23 @@
+{
+  "name": "studyforge-ai-functions",
+  "description": "Firebase Cloud Functions for StudyForge AI",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "lint": "node -c index.js",
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.2.0",
+    "firebase-functions": "^5.0.1",
+    "openai": "^4.56.0",
+    "stripe": "^16.5.0"
+  }
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>To‑Do List</title>
+
+    <!-- Typography: editorial display + clean body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500,650&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="mesh"></div>
+      <div class="grain"></div>
+    </div>
+
+    <main class="app" aria-label="To-do app">
+      <header class="top">
+        <div class="meta">
+          <div class="clock" aria-live="polite">
+            <div class="clock__date" id="date"></div>
+            <div class="clock__time" id="time"></div>
+          </div>
+          <div class="title">
+            <h1>Tasks</h1>
+            <p>Stay sharp. Stay light. Finish what matters.</p>
+          </div>
+        </div>
+
+        <button class="theme" id="themeToggle" type="button" aria-label="Toggle dark mode">
+          <span class="theme__icon" aria-hidden="true"></span>
+          <span class="theme__label">Theme</span>
+        </button>
+      </header>
+
+      <section class="composer" aria-label="Add a new task">
+        <form id="taskForm" autocomplete="off">
+          <label class="sr-only" for="taskInput">New task</label>
+          <input
+            id="taskInput"
+            name="task"
+            type="text"
+            inputmode="text"
+            placeholder="Add a task… (press Enter)"
+            maxlength="180"
+            required
+          />
+          <button class="btn btn--primary" type="submit">
+            <span class="btn__spark" aria-hidden="true"></span>
+            Add
+          </button>
+        </form>
+      </section>
+
+      <section class="list" aria-label="Your tasks">
+        <ul id="taskList" class="taskList" role="list"></ul>
+
+        <div id="emptyState" class="empty" hidden>
+          <div class="empty__badge">No tasks yet</div>
+          <p>Write one small thing. Then do it.</p>
+        </div>
+      </section>
+
+      <footer class="stats" aria-label="Task counters">
+        <div class="pill">
+          <span class="pill__label">Total</span>
+          <span class="pill__value" id="countTotal">0</span>
+        </div>
+        <div class="pill pill--ok">
+          <span class="pill__label">Completed</span>
+          <span class="pill__value" id="countDone">0</span>
+        </div>
+        <div class="pill pill--warn">
+          <span class="pill__label">Pending</span>
+          <span class="pill__value" id="countPending">0</span>
+        </div>
+      </footer>
+    </main>
+
+    <template id="taskItemTemplate">
+      <li class="task" data-state="idle">
+        <button class="task__check" type="button" aria-label="Mark as completed">
+          <span class="task__checkMark" aria-hidden="true"></span>
+        </button>
+
+        <div class="task__body">
+          <div class="task__text" role="textbox"></div>
+          <div class="task__hint"></div>
+        </div>
+
+        <div class="task__actions">
+          <button class="iconBtn iconBtn--edit" type="button" aria-label="Edit task" title="Edit">
+            <span aria-hidden="true">✎</span>
+          </button>
+          <button class="iconBtn iconBtn--del" type="button" aria-label="Delete task" title="Delete">
+            <span aria-hidden="true">⌫</span>
+          </button>
+        </div>
+      </li>
+    </template>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>

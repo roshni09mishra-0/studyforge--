@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // User profile
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Billing docs are server-managed (Cloud Functions with Admin SDK bypass rules).
+    // Users can read their balance/ledger, but cannot write it from the client.
+    match /users/{uid}/billing/{docId} {
+      allow read: if isOwner(uid);
+      allow write: if false;
+    }
+    match /users/{uid}/billing/{docId}/{subPath=**} {
+      allow read: if isOwner(uid);
+      allow write: if false;
+    }
+
+    // User content is stored under /users/{uid}/...
+    match /users/{uid}/{document=**} {
+      allow read, write: if isOwner(uid);
+    }
+
+    // Deny everything else by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
